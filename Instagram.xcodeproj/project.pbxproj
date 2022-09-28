@@ -19,6 +19,8 @@
 		C491010628E3528300BC8F4C /* ImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C491010528E3528300BC8F4C /* ImageController.swift */; };
 		C491010828E3528C00BC8F4C /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C491010728E3528C00BC8F4C /* NotificationController.swift */; };
 		C491010A28E3529200BC8F4C /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C491010928E3529200BC8F4C /* ProfileController.swift */; };
+		C491010C28E486D900BC8F4C /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C491010B28E486D900BC8F4C /* FeedCell.swift */; };
+		C491010E28E4878700BC8F4C /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C491010D28E4878700BC8F4C /* Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		C491010528E3528300BC8F4C /* ImageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageController.swift; sourceTree = "<group>"; };
 		C491010728E3528C00BC8F4C /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		C491010928E3529200BC8F4C /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
+		C491010B28E486D900BC8F4C /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
+		C491010D28E4878700BC8F4C /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +92,7 @@
 		C49100F928E340AC00BC8F4C /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				C491010D28E4878700BC8F4C /* Extension.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -122,6 +127,7 @@
 		C49100FD28E340BB00BC8F4C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C491010B28E486D900BC8F4C /* FeedCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -205,6 +211,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C491010628E3528300BC8F4C /* ImageController.swift in Sources */,
+				C491010C28E486D900BC8F4C /* FeedCell.swift in Sources */,
 				C49100EA28E3408600BC8F4C /* ViewController.swift in Sources */,
 				C491010828E3528C00BC8F4C /* NotificationController.swift in Sources */,
 				C491010428E3527700BC8F4C /* SearchController.swift in Sources */,
@@ -212,6 +219,7 @@
 				C491010A28E3529200BC8F4C /* ProfileController.swift in Sources */,
 				C491010228E3527000BC8F4C /* FeedController.swift in Sources */,
 				C491010028E3424300BC8F4C /* MainTabController.swift in Sources */,
+				C491010E28E4878700BC8F4C /* Extension.swift in Sources */,
 				C49100E828E3408600BC8F4C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
