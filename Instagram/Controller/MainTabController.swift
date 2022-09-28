@@ -20,11 +20,12 @@ class MainTabController: UITabBarController {
     
     func configureViewControllers() {
 
+        let layout = UICollectionViewFlowLayout()
         let feed = templateNavigationController(
             unselectedImage: UIImage(named: "home_selected") ?? UIImage(),
             selectedImage: UIImage(named: "home_unselected") ?? UIImage(),
             title: "Feed",
-            rootViewController: FeedController())
+            rootViewController: FeedController(collectionViewLayout: layout))
         let search = templateNavigationController(
             unselectedImage: UIImage(named: "search_selected") ?? UIImage(),
             selectedImage: UIImage(named: "search_unselected") ?? UIImage(),
