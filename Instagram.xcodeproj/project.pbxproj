@@ -24,6 +24,7 @@
 		C491011128E4C3AE00BC8F4C /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C491011028E4C3AE00BC8F4C /* LoginController.swift */; };
 		C491011328E4C3BC00BC8F4C /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C491011228E4C3BC00BC8F4C /* RegistrationController.swift */; };
 		C491011528E5CE6D00BC8F4C /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C491011428E5CE6D00BC8F4C /* CustomTextField.swift */; };
+		C491011728E5EAC200BC8F4C /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C491011628E5EAC200BC8F4C /* AuthenticationViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		C491011028E4C3AE00BC8F4C /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		C491011228E4C3BC00BC8F4C /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
 		C491011428E5CE6D00BC8F4C /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		C491011628E5EAC200BC8F4C /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +129,7 @@
 		C49100FC28E340B900BC8F4C /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				C491011628E5EAC200BC8F4C /* AuthenticationViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 				C491010C28E486D900BC8F4C /* FeedCell.swift in Sources */,
 				C49100EA28E3408600BC8F4C /* ViewController.swift in Sources */,
 				C491010828E3528C00BC8F4C /* NotificationController.swift in Sources */,
+				C491011728E5EAC200BC8F4C /* AuthenticationViewModel.swift in Sources */,
 				C491010428E3527700BC8F4C /* SearchController.swift in Sources */,
 				C49100E628E3408600BC8F4C /* AppDelegate.swift in Sources */,
 				C491010A28E3529200BC8F4C /* ProfileController.swift in Sources */,
