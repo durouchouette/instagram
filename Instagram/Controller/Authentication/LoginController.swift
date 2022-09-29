@@ -39,10 +39,11 @@ class LoginController: UIViewController {
         return button
     }()
     
-    private let noAccountButton: UIButton = {
+    private lazy var noAccountButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitleColor(.white, for: .normal)
         button.setTitle("Don't have an account? Sign up", for: .normal)
+        button.addTarget(self, action: #selector(handleShowSignUp), for: .touchUpInside)
         return button
     }()
     
@@ -60,14 +61,17 @@ class LoginController: UIViewController {
         configureUI()
     }
     
+    // MARK: - Actions
+    
+    @objc func handleShowSignUp() {
+        let controller = RegistrationController()
+        navigationController?.pushViewController(controller, animated: true)
+    }
+    
     // MARK: - Helpers
     
     func configureUI() {
-        let gradient = CAGradientLayer()
-        gradient.colors = [UIColor.systemPurple.cgColor, UIColor.systemBlue.cgColor]
-        gradient.locations = [0, 1]
-        view.layer.addSublayer(gradient)
-        gradient.frame = view.frame
+        configureGradientLayer()
         
         view.addSubview(iconImage)
         iconImage.centerX(inView: view)
@@ -77,8 +81,8 @@ class LoginController: UIViewController {
         let stack = UIStackView(arrangedSubviews: [emailTextField, passwordTextField, loginButton, forgotPasswordButton])
         stack.axis = .vertical
         stack.spacing = 20
-        
         view.addSubview(stack)
+        
         stack.anchor(
             top: iconImage.bottomAnchor,
             left: view.leftAnchor,
