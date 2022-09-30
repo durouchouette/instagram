@@ -101,7 +101,7 @@ class RegistrationController: UIViewController {
                 return
             }
             
-           print("SUCCESS")
+            self.dismiss(animated: true, completion: nil)
         }
     }
     
