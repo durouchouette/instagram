@@ -31,7 +31,7 @@ class LoginController: UIViewController {
         return textField
     }()
     
-    private let loginButton: UIButton = {
+    private lazy var loginButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Login", for: .normal)
         button.setTitleColor(.white, for: .normal)
@@ -39,6 +39,7 @@ class LoginController: UIViewController {
         button.layer.cornerRadius = 5
         button.setHeight(50)
         button.isEnabled = false
+        button.addTarget(self, action: #selector(handleLogin), for: .touchUpInside)
         return button
     }()
     
@@ -80,6 +81,19 @@ class LoginController: UIViewController {
         }
         
         updateForm()
+    }
+    
+    @objc func handleLogin() {
+        guard let email = emailTextField.text else { return }
+        guard let password = passwordTextField.text else { return }
+        AuthService.loginUserIn(email, password: password) { result, error in
+            if let error = error {
+                print("Failed to log user in \(email) with error \(error.localizedDescription)")
+                return
+            }
+            
+            self.dismiss(animated: true, completion: nil)
+        }
     }
     
     // MARK: - Helpers
