@@ -11,7 +11,8 @@ class RegistrationController: UIViewController {
     
     // MARK: - Properties
     private var viewModel = RegistrationViewModel()
-
+    private var profileImage: UIImage?
+    
     private lazy var plusButton: UIButton = {
         let button = UIButton(type: .system)
         button.setImage(UIImage(named: "plus_photo"), for: .normal)
@@ -37,7 +38,7 @@ class RegistrationController: UIViewController {
     
     private let usernameTextField = CustomTextField(placeholder: "Username")
     
-    private let signUpButton: UIButton = {
+    private lazy var signUpButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Sign Up", for: .normal)
         button.setTitleColor(.white, for: .normal)
@@ -45,6 +46,7 @@ class RegistrationController: UIViewController {
         button.layer.cornerRadius = 5
         button.setHeight(50)
         button.isEnabled = false
+        button.addTarget(self, action: #selector(handleSignUp), for: .touchUpInside)
         return button
     }()
     
@@ -82,6 +84,25 @@ class RegistrationController: UIViewController {
         picker.allowsEditing = true
         
         present(picker, animated: true, completion: nil)
+    }
+    
+    @objc func handleSignUp() {
+        guard let email = emailTextField.text else { return }
+        guard let password = passwordTextField.text else { return }
+        guard let fullname = fullnameTextField.text else { return }
+        guard let username = usernameTextField.text?.lowercased() else { return }
+        guard let profileImage = profileImage else { return }
+        
+        let credentials = AuthCredentials(email: email, password: password, fullname: fullname, username: username, profileImage: profileImage)
+        
+        AuthService.registerUser(credentials) { error in
+            if let error = error {
+                print("Failed to register user \(email) with error \(error.localizedDescription)")
+                return
+            }
+            
+           print("SUCCESS")
+        }
     }
     
     // MARK: - Lifecycle
@@ -146,6 +167,7 @@ extension RegistrationController: UIImagePickerControllerDelegate, UINavigationC
         plusButton.layer.borderWidth = 2
         plusButton.setImage(selectedImage.withRenderingMode(.alwaysOriginal), for: .normal)
         
+        profileImage = selectedImage
         self.dismiss(animated: true)
     }
 }
